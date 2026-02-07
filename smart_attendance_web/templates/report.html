@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Student Report</h3>
+
+<form method="post" class="mt-3 mb-4">
+    <div class="mb-3">
+        <label>Enter Roll No</label>
+        <input type="text" name="roll" class="form-control" required>
+    </div>
+    <button class="btn btn-info">View Report</button>
+</form>
+
+{% if student %}
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ student.name }}</h5>
+        <p><strong>Roll No:</strong> {{ student.roll_no }}</p>
+        <p><strong>Semester:</strong> {{ student.semester }}</p>
+        <p><strong>Attendance:</strong> {{ student.attendance }}%</p>
+        <p><strong>Marks:</strong> {{ student.marks }}</p>
+        <p><strong>Performance:</strong> {{ remark }}</p>
+
+        {% if warning %}
+        <p class="text-danger"><strong>{{ warning }}</strong></p>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+{% endblock %}

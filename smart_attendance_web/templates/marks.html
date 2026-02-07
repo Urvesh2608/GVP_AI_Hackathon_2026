@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Enter Marks</h3>
+
+<form method="post" class="mt-3">
+    <div class="mb-3">
+        <label>Roll No</label>
+        <input type="text" name="roll" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Marks (out of 100)</label>
+        <input type="number" name="marks" class="form-control" required>
+    </div>
+
+    <button class="btn btn-warning">Save Marks</button>
+</form>
+{% endblock %}

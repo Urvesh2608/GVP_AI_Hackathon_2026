@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Mark Attendance</h3>
+
+<form method="post" class="mt-3">
+    <div class="mb-3">
+        <label>Roll No</label>
+        <input type="text" name="roll" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Total Lectures</label>
+        <input type="number" name="total" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Lectures Attended</label>
+        <input type="number" name="attended" class="form-control" required>
+    </div>
+
+    <button class="btn btn-success">Submit Attendance</button>
+</form>
+{% endblock %}
