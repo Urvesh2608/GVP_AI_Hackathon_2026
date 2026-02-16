@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<form method="POST" class="auth-box">
+    <h2 style="color: aliceblue;">Register</h2>
+
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+
+    <button type="submit">Register</button>
+
+    <p style="color: aliceblue;">Already user? <a href="/login">Login</a></p>
+</form>
+{% endblock %}

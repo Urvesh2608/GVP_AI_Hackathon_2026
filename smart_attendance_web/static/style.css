@@ -1,283 +1,217 @@
 /* =====================================================
-   DESIGN SYSTEM (REAL WORLD BASE)
+   GLOBAL RESET
 ===================================================== */
-
-:root {
-    --bg-main: #f4f6f9;
-    --bg-card: #ffffff;
-    --primary: #4f46e5;
-    --success: #16a34a;
-    --warning: #f59e0b;
-    --info: #0ea5e9;
-    --danger: #dc2626;
-
-    --text-dark: #1f2937;
-    --text-muted: #6b7280;
-
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 18px;
-
-    --shadow-sm: 0 2px 6px rgba(0,0,0,0.08);
-    --shadow-md: 0 8px 25px rgba(0,0,0,0.12);
-}
-
-/* =====================================================
-   GLOBAL RESET / BASE
-===================================================== */
-
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: var(--bg-main);
-    color: var(--text-dark);
-    line-height: 1.6;
-}
-
 /* =====================================================
-   LAYOUT
+   BODY / BACKGROUND
 ===================================================== */
+body {
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-main.container {
-    max-width: 1200px;
-}
+    background-image:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("/static/images/gv_background.png");
 
-.container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: #ffffff;
+    line-height: 1.6;
 }
 
 /* =====================================================
    NAVBAR
 ===================================================== */
-/* Reset default browser style */
-/* Navbar */
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f8f8f8;
-    padding: 10px 20px;
-    border-bottom: 1px solid #ddd;
+    background: rgba(15, 15, 15, 0.95) !important;
+    backdrop-filter: blur(5px);
 }
 
-/* Left side */
-.nav-left {
-    display: flex;
-    align-items: center;
+.navbar-brand span {
+    font-weight: 700;
+    font-size: 1.1rem;
 }
 
-.logo {
-    height: 60px;
-    margin-right: 15px;
-}
-
-.site-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #000;
-}
-
-/* Right side menu */
-.nav-links {
-    list-style: none;      /* bullets remove */
-    display: flex;
-}
-
-.nav-links li {
-    margin-left: 20px;
-}
-
-.nav-links a {
-    text-decoration: none;  /* underline remove */
-    color: #000;            /* blue color remove */
-    font-size: 16px;
+.nav-link {
+    color: #e5e7eb !important;
     font-weight: 500;
 }
 
-.nav-links a:hover {
-    color: #0b4f6c;
-}
-
-
-/* =====================================================
-   TYPOGRAPHY
-===================================================== */
-
-h1, h2, h3, h4 {
-    font-weight: 700;
-}
-
-h2 {
-    margin-bottom: 0.75rem;
-}
-
-.text-muted {
-    color: var(--text-muted) !important;
+.nav-link:hover {
+    color: #ffffff !important;
 }
 
 /* =====================================================
-   BUTTON SYSTEM (REAL-WORLD OVERRIDE)
+   RUNNING TEXT
 ===================================================== */
-
-.btn {
-    border-radius: var(--radius-md);
+.running-text {
+    background: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+    padding: 10px;
     font-weight: 600;
-    padding: 12px 16px;
-    border: none;
-    transition: all 0.25s ease;
+    letter-spacing: 0.3px;
 }
 
-.btn:focus {
-    box-shadow: none;
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+.content-area {
+    padding: 80px 20px 120px;
+    text-align: center;
+}
+
+/* =====================================================
+   HERO / GLASS BOX
+===================================================== */
+.hero-box {
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+    padding: 40px 45px;
+
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+
+    border-radius: 20px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+}
+
+.main-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #e5e7eb;
+}
+
+.description {
+    font-size: 1.05rem;
+    color: #f8fafc;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+.btn {
+    padding: 18px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border-radius: 16px;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-}
-
-/* Custom button colors */
-.btn-primary {
-    background: linear-gradient(135deg, #6366f1, #4f46e5);
-}
-
-.btn-success {
-    background: linear-gradient(135deg, #22c55e, #16a34a);
-}
-
-.btn-warning {
-    background: linear-gradient(135deg, #fbbf24, #f59e0b);
-    color: #000;
-}
-
-.btn-info {
-    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-}
-
-/* =====================================================
-   CARDS (DASHBOARD READY)
-===================================================== */
-
-.card {
-    background: var(--bg-card);
-    border: none;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
-    transition: all 0.25s ease;
-}
-
-.card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
 }
 
-.card-title {
-    font-weight: 600;
-}
+.btn-primary { background: #2563eb; }
+.btn-success { background: #16a34a; }
+.btn-warning { background: #facc15; color: #000; }
+.btn-info    { background: #06b6d4; }
 
 /* =====================================================
-   FORMS (REAL UX)
+   FORMS / CARDS / TABLES
 ===================================================== */
+form,
+.card,
+table {
+    background: rgba(255,255,255,0.95);
+    color: #111827;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
 
 form {
-    background: var(--bg-card);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
 }
 
 label {
     font-weight: 600;
-    margin-bottom: 0.4rem;
 }
 
-input, select {
-    border-radius: var(--radius-md) !important;
-    padding: 10px 12px !important;
-    border: 1px solid #d1d5db !important;
-}
-
-input:focus, select:focus {
-    border-color: var(--primary) !important;
-    box-shadow: 0 0 0 3px rgba(79,70,229,0.2) !important;
+input {
+    margin-bottom: 15px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
 }
 
 /* =====================================================
-   TABLES (REPORT PAGE)
+   LOGIN / REGISTER PAGE
 ===================================================== */
+.auth-box {
+    max-width: 400px;
+    margin: 120px auto;
+    padding: 35px;
 
-table {
-    background: var(--bg-card);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(6px);
+
+    border-radius: 18px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    text-align: center;
 }
 
-th {
-    background: #111827;
+.auth-box h2 {
+    margin-bottom: 20px;
+}
+
+.auth-box input {
+    width: 100%;
+    background: #ffffff;
+}
+
+.auth-box button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 14px;
+    background: #2563eb;
     color: #fff;
-    font-weight: 600;
+    font-weight: 700;
+    border: none;
 }
 
-td, th {
-    padding: 14px;
-    vertical-align: middle;
-}
-
-/* =====================================================
-   STATUS BADGES
-===================================================== */
-
-.badge {
-    padding: 6px 12px;
-    border-radius: 999px;
-    font-size: 0.75rem;
-    font-weight: 600;
-}
-
-.badge-success {
-    background: #dcfce7;
-    color: #166534;
-}
-
-.badge-warning {
-    background: #fef3c7;
-    color: #92400e;
-}
-
-.badge-danger {
-    background: #fee2e2;
-    color: #991b1b;
+.auth-box a {
+    color: #93c5fd;
 }
 
 /* =====================================================
    FOOTER
 ===================================================== */
-
 footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
     font-size: 0.85rem;
-    color: var(--text-muted);
+    background: rgba(0,0,0,0.65);
+    color: #ffffff;
 }
 
 /* =====================================================
-   RESPONSIVE (REAL-WORLD)
+   RESPONSIVE
 ===================================================== */
-
 @media (max-width: 768px) {
-    h2 {
-        font-size: 1.4rem;
+    .main-title {
+        font-size: 2rem;
     }
 
     .btn {
-        padding: 10px;
-    }
-
-    form {
-        padding: 1.5rem;
+        padding: 14px;
+        font-size: 1rem;
     }
 }

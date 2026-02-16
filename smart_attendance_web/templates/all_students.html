@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="mb-4">All Students Report</h3>
+
+<table class="table table-bordered table-striped text-center">
+    <thead class="table-dark">
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Semester</th>
+            <th>Attendance (%)</th>
+            <th>Marks</th>
+            <th>Performance</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.roll_no }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.semester }}</td>
+            <td>
+                {{ student.attendance }}
+                {% if student.attendance < 75 %}
+                    <span class="text-danger">⚠</span>
+                {% endif %}
+            </td>
+            <td>{{ student.marks }}</td>
+            <td>
+                {% if student.marks >= 75 %}
+                    Good
+                {% elif student.marks >= 50 %}
+                    Average
+                {% else %}
+                    Needs Improvement
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

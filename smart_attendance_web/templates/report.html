@@ -1,14 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-<h3>Student Report</h3>
 
-<form method="post" class="mt-3 mb-4">
+<h3 class="mb-4">Student Report</h3>
+
+<form method="post" class="mb-3">
     <div class="mb-3">
         <label>Enter Roll No</label>
         <input type="text" name="roll" class="form-control" required>
     </div>
     <button class="btn btn-info">View Report</button>
 </form>
+
+<a href="{{ url_for('all_students') }}" class="btn btn-success mb-4">
+    View All Students
+</a>
 
 {% if student %}
 <div class="card">
@@ -26,4 +31,5 @@
     </div>
 </div>
 {% endif %}
+
 {% endblock %}
